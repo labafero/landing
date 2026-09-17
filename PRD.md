@@ -1,6 +1,6 @@
 # PRD — Showroom e portfólio do Labafero
 
-**Status:** primeira versão em Nuxt implementada; preparação para deploy
+**Status:** primeira versão em Nuxt publicada em `labafero.com`
 
 **Data:** 17/09/2026
 
@@ -13,7 +13,7 @@
 **Escopo da primeira versão:** apresentação do Labafero, showroom com Nave, Streeetch, Lockroom, Konton e VPN, menção à parceria com Avalanche e analytics básico.
 
 **Idealizador:** o site pessoal informado é [quila.dev](https://quila.dev). A primeira versão inclui um link discreto na seção “Sobre”, sem transformar o portfólio do estúdio em perfil pessoal.
-**Decisões pendentes de operação:** configuração DNS de `labafero.com`, ID do site no Umami, textos e visuais finais de cada card, orçamento e prazo. O papel do Labafero só será declarado quando estiver confirmado; a ausência dessa informação não impede um card descritivo.
+**Decisões pendentes de operação:** ID do site no Umami, textos e visuais finais de cada card, orçamento e prazo. O papel do Labafero só será declarado quando estiver confirmado; a ausência dessa informação não impede um card descritivo.
 
 ## 1. Executive Summary
 
@@ -103,4 +103,4 @@ Não se aplica ao escopo atual.
 - **Dados iniciais escassos:** tráfego de uma marca nova pode ser insuficiente para conclusões sobre posicionamento. Usar analytics como linha de base e combinar com feedback qualitativo.
 - **Origem de tráfego incompleta:** aplicativos sociais podem não enviar referência. Usar UTMs nos links divulgados e registrar limitações da medição.
 
-**Próximo passo:** publicar a versão implementada na Vercel, associar `labafero.com`, verificar DNS e depois configurar o ID do Umami para iniciar a coleta de métricas.
+**Próximo passo:** configurar o ID do Umami para iniciar a coleta de métricas e usar os primeiros dados para revisar o posicionamento da marca.

@@ -21,6 +21,6 @@ Sem `NUXT_PUBLIC_UMAMI_WEBSITE_ID`, a página funciona normalmente, mas não env
 
 ## Deploy na Vercel
 
-O projeto usa a detecção automática de Nuxt da Vercel. Após autenticar a CLI, execute `npx vercel link` na pasta do projeto e `npx vercel deploy --prod` para publicar. O domínio `labafero.com` deve ser associado ao projeto na Vercel; os registros DNS exigidos serão informados pela plataforma conforme a configuração atual do domínio.
+O projeto `labafero-landing` está vinculado à Vercel e ao repositório [labafero/landing](https://github.com/labafero/landing). A branch `main` publica em [labafero.com](https://labafero.com/); `www.labafero.com` também está associado. Para publicar manualmente pela CLI, execute `npx vercel deploy --prod`.
 
 Configure `NUXT_PUBLIC_UMAMI_WEBSITE_ID` nas variáveis do projeto Vercel quando houver um site Umami. A pasta `.vercel` e arquivos `.env` locais não entram no repositório.
