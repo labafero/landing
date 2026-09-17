@@ -75,9 +75,10 @@ const projects: Project[] = [
 
 const projectsSection = ref<HTMLElement | null>(null)
 let projectsObserver: IntersectionObserver | undefined
+const { gtag } = useGtag()
 
 function track(name: string, data?: Record<string, string>) {
-  useTrackEvent(name, data)
+  gtag('event', name, data)
 }
 
 function onProjectToggle(event: Event, id: string) {
