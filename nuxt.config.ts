@@ -2,11 +2,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
-  runtimeConfig: {
-    public: {
-      umamiWebsiteId: '',
-      umamiScriptUrl: 'https://cloud.umami.is/script.js',
-    },
+  modules: ['nuxt-gtag'],
+  gtag: {
+    id: 'G-DQ10F88M3W',
+    enabled: process.env.NODE_ENV === 'production' && process.env.VERCEL_ENV !== 'preview',
   },
   app: {
     head: {

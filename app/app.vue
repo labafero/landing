@@ -73,32 +73,16 @@ const projects: Project[] = [
   },
 ]
 
-const config = useRuntimeConfig()
-const analyticsEnabled = Boolean(config.public.umamiWebsiteId)
 const projectsSection = ref<HTMLElement | null>(null)
 let projectsObserver: IntersectionObserver | undefined
 
-if (analyticsEnabled) {
-  useHead({
-    script: [
-      {
-        src: String(config.public.umamiScriptUrl),
-        defer: true,
-        'data-website-id': String(config.public.umamiWebsiteId),
-      },
-    ],
-  })
-}
-
 function track(name: string, data?: Record<string, string>) {
-  if (import.meta.client && analyticsEnabled) {
-    window.umami?.track(name, data)
-  }
+  useTrackEvent(name, data)
 }
 
 function onProjectToggle(event: Event, id: string) {
   if ((event.target as HTMLDetailsElement).open) {
-    track('project_open', { project: id })
+    track('project_open', { project_id: id })
   }
 }
 
@@ -117,6 +101,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => projectsObserver?.disconnect())
+
 </script>
 
 <template>
@@ -193,7 +178,7 @@ onUnmounted(() => projectsObserver?.disconnect())
                 <p class="project-lead">{{ project.summary }}</p>
                 <p>{{ project.detail }}</p>
                 <span class="project-note">{{ project.note }}</span>
-                <a v-if="project.url" :href="project.url" target="_blank" rel="noopener noreferrer" class="text-link" @click="track('project_link', { project: project.id })">Visitar projeto <span aria-hidden="true">↗</span></a>
+                <a v-if="project.url" :href="project.url" target="_blank" rel="noopener noreferrer" class="text-link" @click="track('project_link', { project_id: project.id })">Visitar projeto <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </details>
